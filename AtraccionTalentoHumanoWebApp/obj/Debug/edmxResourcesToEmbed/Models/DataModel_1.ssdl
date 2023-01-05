@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Atraccion_Talento_HumanoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AreasProfesionales">
+    <Key>
+      <PropertyRef Name="Cod_AreaProfesional" />
+    </Key>
+    <Property Name="Cod_AreaProfesional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreAreaProfesional" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cantones">
+    <Key>
+      <PropertyRef Name="Cod_Cantones" />
+    </Key>
+    <Property Name="Cod_Cantones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCanton" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cod_Provincia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Certificados">
+    <Key>
+      <PropertyRef Name="Id_Certificado" />
+    </Key>
+    <Property Name="Id_Certificado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCertificado" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Horas" Type="smallint" Nullable="false" />
+    <Property Name="Emitido" Type="datetime" Nullable="false" />
+    <Property Name="Emisor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Curriculums">
+    <Key>
+      <PropertyRef Name="Cod_Usuario" />
+    </Key>
+    <Property Name="Cod_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="false" />
+    <Property Name="Archivo" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Distritos">
+    <Key>
+      <PropertyRef Name="Cod_Distrito" />
+    </Key>
+    <Property Name="Cod_Distrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDistrito" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Cod_Cantones" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Escolaridades">
+    <Key>
+      <PropertyRef Name="Cod_Escolaridad" />
+    </Key>
+    <Property Name="Cod_Escolaridad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Idiomas">
+    <Key>
+      <PropertyRef Name="Id_Idioma" />
+    </Key>
+    <Property Name="Id_Idioma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NivelEscritura" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NivelLectura" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NivelConversacional" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Institucion" Type="varchar" MaxLength="100" />
+    <Property Name="Certificado" Type="bit" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Licencias">
+    <Key>
+      <PropertyRef Name="Id_Licencias" />
+    </Key>
+    <Property Name="Id_Licencias" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Vencimiento" Type="datetime" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provincias">
+    <Key>
+      <PropertyRef Name="Cod_Provincia" />
+    </Key>
+    <Property Name="Cod_Provincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreProvincia" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Puestos">
+    <Key>
+      <PropertyRef Name="Cod_Puesto" />
+    </Key>
+    <Property Name="Cod_Puesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombrePuesto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReqLicencia" Type="varchar" MaxLength="2" />
+    <Property Name="ReqEscolaridad" Type="varchar" MaxLength="200" />
+    <Property Name="ReqTitulo" Type="varchar" MaxLength="100" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="Cod_AreaProfesional" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Puestos_Usuario">
+    <Key>
+      <PropertyRef Name="Id_Puestos_Usuario" />
+    </Key>
+    <Property Name="Id_Puestos_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="int" Nullable="false" />
+    <Property Name="Cod_Puesto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Titulos">
+    <Key>
+      <PropertyRef Name="Id_Titulo" />
+    </Key>
+    <Property Name="Id_Titulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreTitulo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Grado" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Emision" Type="datetime" Nullable="false" />
+    <Property Name="Emisor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Cod_Usuario" />
+    </Key>
+    <Property Name="Cod_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="100" />
+    <Property Name="Direccion" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="TelefonoMovil" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="TelefonoFijo" Type="varchar" MaxLength="13" />
+    <Property Name="Nacionalidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaIngresoSistema" Type="datetime" Nullable="false" />
+    <Property Name="UltimaVisita" Type="datetime" Nullable="false" />
+    <Property Name="EstadoCivil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Genero" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Discapacidad" Type="bit" Nullable="false" />
+    <Property Name="Cod_Distrito" Type="int" Nullable="false" />
+    <Property Name="Cod_Escolaridad" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="AreasProfesionales_Puestos_fk">
+    <End Role="AreasProfesionales" Type="Self.AreasProfesionales" Multiplicity="1" />
+    <End Role="Puestos" Type="Self.Puestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreasProfesionales">
+        <PropertyRef Name="Cod_AreaProfesional" />
+      </Principal>
+      <Dependent Role="Puestos">
+        <PropertyRef Name="Cod_AreaProfesional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cantones_Distritos_fk">
+    <End Role="Cantones" Type="Self.Cantones" Multiplicity="1" />
+    <End Role="Distritos" Type="Self.Distritos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cantones">
+        <PropertyRef Name="Cod_Cantones" />
+      </Principal>
+      <Dependent Role="Distritos">
+        <PropertyRef Name="Cod_Cantones" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Distritos_Usuarios_fk">
+    <End Role="Distritos" Type="Self.Distritos" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distritos">
+        <PropertyRef Name="Cod_Distrito" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Cod_Distrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Escolaridades_Usuarios_fk">
+    <End Role="Escolaridades" Type="Self.Escolaridades" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Escolaridades">
+        <PropertyRef Name="Cod_Escolaridad" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Cod_Escolaridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Provincias_Cantones_fk">
+    <End Role="Provincias" Type="Self.Provincias" Multiplicity="1" />
+    <End Role="Cantones" Type="Self.Cantones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincias">
+        <PropertyRef Name="Cod_Provincia" />
+      </Principal>
+      <Dependent Role="Cantones">
+        <PropertyRef Name="Cod_Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Puestos_Puestos_Usuario_fk">
+    <End Role="Puestos" Type="Self.Puestos" Multiplicity="1" />
+    <End Role="Puestos_Usuario" Type="Self.Puestos_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puestos">
+        <PropertyRef Name="Cod_Puesto" />
+      </Principal>
+      <Dependent Role="Puestos_Usuario">
+        <PropertyRef Name="Cod_Puesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_AreasProfesionales_Usuario_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Puestos_Usuario" Type="Self.Puestos_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Puestos_Usuario">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Certificados__fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Certificados" Type="Self.Certificados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Certificados">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Curriculums_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Curriculums" Type="Self.Curriculums" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Curriculums">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Idiomas_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Idiomas" Type="Self.Idiomas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Idiomas">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Licencias_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Licencias" Type="Self.Licencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Licencias">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Titulos_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Titulos" Type="Self.Titulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Titulos">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Atraccion_Talento_HumanoModelStoreContainer">
+    <EntitySet Name="AreasProfesionales" EntityType="Self.AreasProfesionales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cantones" EntityType="Self.Cantones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificados" EntityType="Self.Certificados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Curriculums" EntityType="Self.Curriculums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distritos" EntityType="Self.Distritos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Escolaridades" EntityType="Self.Escolaridades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Idiomas" EntityType="Self.Idiomas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Licencias" EntityType="Self.Licencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Puestos" EntityType="Self.Puestos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Puestos_Usuario" EntityType="Self.Puestos_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Titulos" EntityType="Self.Titulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="AreasProfesionales_Puestos_fk" Association="Self.AreasProfesionales_Puestos_fk">
+      <End Role="AreasProfesionales" EntitySet="AreasProfesionales" />
+      <End Role="Puestos" EntitySet="Puestos" />
+    </AssociationSet>
+    <AssociationSet Name="Cantones_Distritos_fk" Association="Self.Cantones_Distritos_fk">
+      <End Role="Cantones" EntitySet="Cantones" />
+      <End Role="Distritos" EntitySet="Distritos" />
+    </AssociationSet>
+    <AssociationSet Name="Distritos_Usuarios_fk" Association="Self.Distritos_Usuarios_fk">
+      <End Role="Distritos" EntitySet="Distritos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="Escolaridades_Usuarios_fk" Association="Self.Escolaridades_Usuarios_fk">
+      <End Role="Escolaridades" EntitySet="Escolaridades" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="Provincias_Cantones_fk" Association="Self.Provincias_Cantones_fk">
+      <End Role="Provincias" EntitySet="Provincias" />
+      <End Role="Cantones" EntitySet="Cantones" />
+    </AssociationSet>
+    <AssociationSet Name="Puestos_Puestos_Usuario_fk" Association="Self.Puestos_Puestos_Usuario_fk">
+      <End Role="Puestos" EntitySet="Puestos" />
+      <End Role="Puestos_Usuario" EntitySet="Puestos_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_AreasProfesionales_Usuario_fk" Association="Self.Usuarios_AreasProfesionales_Usuario_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Puestos_Usuario" EntitySet="Puestos_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Certificados__fk" Association="Self.Usuarios_Certificados__fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Certificados" EntitySet="Certificados" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Curriculums_fk" Association="Self.Usuarios_Curriculums_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Curriculums" EntitySet="Curriculums" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Idiomas_fk" Association="Self.Usuarios_Idiomas_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Idiomas" EntitySet="Idiomas" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Licencias_fk" Association="Self.Usuarios_Licencias_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Licencias" EntitySet="Licencias" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Titulos_fk" Association="Self.Usuarios_Titulos_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Titulos" EntitySet="Titulos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

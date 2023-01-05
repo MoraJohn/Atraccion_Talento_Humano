@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Atraccion_Talento_HumanoModelStoreContainer" CdmEntityContainer="Atraccion_Talento_HumanoEntities">
+    <EntitySetMapping Name="AreasProfesionales">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.AreasProfesionales">
+        <MappingFragment StoreEntitySet="AreasProfesionales">
+          <ScalarProperty Name="Cod_AreaProfesional" ColumnName="Cod_AreaProfesional" />
+          <ScalarProperty Name="NombreAreaProfesional" ColumnName="NombreAreaProfesional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cantones">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Cantones">
+        <MappingFragment StoreEntitySet="Cantones">
+          <ScalarProperty Name="Cod_Cantones" ColumnName="Cod_Cantones" />
+          <ScalarProperty Name="NombreCanton" ColumnName="NombreCanton" />
+          <ScalarProperty Name="Cod_Provincia" ColumnName="Cod_Provincia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificados">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Certificados">
+        <MappingFragment StoreEntitySet="Certificados">
+          <ScalarProperty Name="Id_Certificado" ColumnName="Id_Certificado" />
+          <ScalarProperty Name="NombreCertificado" ColumnName="NombreCertificado" />
+          <ScalarProperty Name="Horas" ColumnName="Horas" />
+          <ScalarProperty Name="Emitido" ColumnName="Emitido" />
+          <ScalarProperty Name="Emisor" ColumnName="Emisor" />
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Curriculums">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Curriculums">
+        <MappingFragment StoreEntitySet="Curriculums">
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distritos">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Distritos">
+        <MappingFragment StoreEntitySet="Distritos">
+          <ScalarProperty Name="Cod_Distrito" ColumnName="Cod_Distrito" />
+          <ScalarProperty Name="NombreDistrito" ColumnName="NombreDistrito" />
+          <ScalarProperty Name="Cod_Cantones" ColumnName="Cod_Cantones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Escolaridades">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Escolaridades">
+        <MappingFragment StoreEntitySet="Escolaridades">
+          <ScalarProperty Name="Cod_Escolaridad" ColumnName="Cod_Escolaridad" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Idiomas">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Idiomas">
+        <MappingFragment StoreEntitySet="Idiomas">
+          <ScalarProperty Name="Id_Idioma" ColumnName="Id_Idioma" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="NivelEscritura" ColumnName="NivelEscritura" />
+          <ScalarProperty Name="NivelLectura" ColumnName="NivelLectura" />
+          <ScalarProperty Name="NivelConversacional" ColumnName="NivelConversacional" />
+          <ScalarProperty Name="Institucion" ColumnName="Institucion" />
+          <ScalarProperty Name="Certificado" ColumnName="Certificado" />
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licencias">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Licencias">
+        <MappingFragment StoreEntitySet="Licencias">
+          <ScalarProperty Name="Id_Licencias" ColumnName="Id_Licencias" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Vencimiento" ColumnName="Vencimiento" />
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincias">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Provincias">
+        <MappingFragment StoreEntitySet="Provincias">
+          <ScalarProperty Name="Cod_Provincia" ColumnName="Cod_Provincia" />
+          <ScalarProperty Name="NombreProvincia" ColumnName="NombreProvincia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puestos">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Puestos">
+        <MappingFragment StoreEntitySet="Puestos">
+          <ScalarProperty Name="Cod_Puesto" ColumnName="Cod_Puesto" />
+          <ScalarProperty Name="NombrePuesto" ColumnName="NombrePuesto" />
+          <ScalarProperty Name="ReqLicencia" ColumnName="ReqLicencia" />
+          <ScalarProperty Name="ReqEscolaridad" ColumnName="ReqEscolaridad" />
+          <ScalarProperty Name="ReqTitulo" ColumnName="ReqTitulo" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Cod_AreaProfesional" ColumnName="Cod_AreaProfesional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puestos_Usuario">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Puestos_Usuario">
+        <MappingFragment StoreEntitySet="Puestos_Usuario">
+          <ScalarProperty Name="Id_Puestos_Usuario" ColumnName="Id_Puestos_Usuario" />
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+          <ScalarProperty Name="Cod_Puesto" ColumnName="Cod_Puesto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titulos">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Titulos">
+        <MappingFragment StoreEntitySet="Titulos">
+          <ScalarProperty Name="Id_Titulo" ColumnName="Id_Titulo" />
+          <ScalarProperty Name="NombreTitulo" ColumnName="NombreTitulo" />
+          <ScalarProperty Name="Grado" ColumnName="Grado" />
+          <ScalarProperty Name="Emision" ColumnName="Emision" />
+          <ScalarProperty Name="Emisor" ColumnName="Emisor" />
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="Atraccion_Talento_HumanoModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Cod_Usuario" ColumnName="Cod_Usuario" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TelefonoMovil" ColumnName="TelefonoMovil" />
+          <ScalarProperty Name="TelefonoFijo" ColumnName="TelefonoFijo" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaIngresoSistema" ColumnName="FechaIngresoSistema" />
+          <ScalarProperty Name="UltimaVisita" ColumnName="UltimaVisita" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Discapacidad" ColumnName="Discapacidad" />
+          <ScalarProperty Name="Cod_Distrito" ColumnName="Cod_Distrito" />
+          <ScalarProperty Name="Cod_Escolaridad" ColumnName="Cod_Escolaridad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

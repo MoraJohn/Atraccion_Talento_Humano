@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07c64c4b2cc146988356215dfe58c38f" Name="Diagram1">
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.AreasProfesionales" Width="1.5" PointX="8.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Cantones" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Certificados" Width="1.5" PointX="9.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Curriculums" Width="1.5" PointX="9.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Distritos" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Escolaridades" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Idiomas" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Licencias" Width="1.5" PointX="9.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Provincias" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Puestos" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Puestos_Usuario" Width="1.5" PointX="12.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Titulos" Width="1.5" PointX="9.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Atraccion_Talento_HumanoModel.Usuarios" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.AreasProfesionales_Puestos_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Cantones_Distritos_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Provincias_Cantones_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Usuarios_Certificados__fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Usuarios_Curriculums_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Distritos_Usuarios_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Escolaridades_Usuarios_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Usuarios_Idiomas_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Usuarios_Licencias_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Puestos_Puestos_Usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Usuarios_AreasProfesionales_Usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Atraccion_Talento_HumanoModel.Usuarios_Titulos_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

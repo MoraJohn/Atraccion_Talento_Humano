@@ -1,0 +1,93 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 3vw;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff;
+}
+
+.navbar-custom {
+    background-color: #0060A9;
+    border: none;
+    height: 6vw;
+    display: flex;
+    align-items: center;
+}
+  .navbar-custom .navbar-brand,
+  .navbar-custom .navbar-nav > li > a{
+      color: #FFCE00;
+      font-family: LilGrotesk;
+      font-weight:300;
+      font-size: 2vw;
+  }
+
+
+.header-layout {
+    background-color: #FFCE00;
+    height: 15vw;
+    padding: 0;
+    margin: 0px 0px 3vw 0px;
+    border: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+    min-height: 100px;
+}
+
+.title1-layout {
+    font-family:LilGrotesk;
+    font-weight:500;
+    font-size:5vw; 
+    padding: 7vw;    
+}
+
+.footer-layout {
+    background-color: #0060A9;
+    padding: 0px;
+    margin: 0px;
+    height: 15vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFCE00;
+    font-family: LilGrotesk;
+    font-size:15px;
+}
+.footer-layout > .footer-item > p{
+    margin: 0px;
+}
+
+.footer-logo{
+    height: 11vw;
+}
+
+
+
+/*Yellow #FFCE00*/
+/*Blue #0060A9*/

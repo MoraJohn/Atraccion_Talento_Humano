@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Atraccion_Talento_HumanoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AreasProfesionales">
+    <Key>
+      <PropertyRef Name="Cod_AreaProfesional" />
+    </Key>
+    <Property Name="Cod_AreaProfesional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreAreaProfesional" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Puestos" Relationship="Self.AreasProfesionales_Puestos_fk" FromRole="AreasProfesionales" ToRole="Puestos" />
+  </EntityType>
+  <EntityType Name="Cantones">
+    <Key>
+      <PropertyRef Name="Cod_Cantones" />
+    </Key>
+    <Property Name="Cod_Cantones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCanton" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cod_Provincia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Distritos" Relationship="Self.Cantones_Distritos_fk" FromRole="Cantones" ToRole="Distritos" />
+    <NavigationProperty Name="Provincias" Relationship="Self.Provincias_Cantones_fk" FromRole="Cantones" ToRole="Provincias" />
+  </EntityType>
+  <EntityType Name="Certificados">
+    <Key>
+      <PropertyRef Name="Id_Certificado" />
+    </Key>
+    <Property Name="Id_Certificado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCertificado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Horas" Type="Int16" Nullable="false" />
+    <Property Name="Emitido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Emisor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_Certificados__fk" FromRole="Certificados" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Curriculums">
+    <Key>
+      <PropertyRef Name="Cod_Usuario" />
+    </Key>
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Archivo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_Curriculums_fk" FromRole="Curriculums" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Distritos">
+    <Key>
+      <PropertyRef Name="Cod_Distrito" />
+    </Key>
+    <Property Name="Cod_Distrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreDistrito" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cod_Cantones" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cantones" Relationship="Self.Cantones_Distritos_fk" FromRole="Distritos" ToRole="Cantones" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Distritos_Usuarios_fk" FromRole="Distritos" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Escolaridades">
+    <Key>
+      <PropertyRef Name="Cod_Escolaridad" />
+    </Key>
+    <Property Name="Cod_Escolaridad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Escolaridades_Usuarios_fk" FromRole="Escolaridades" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Idiomas">
+    <Key>
+      <PropertyRef Name="Id_Idioma" />
+    </Key>
+    <Property Name="Id_Idioma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NivelEscritura" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NivelLectura" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NivelConversacional" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Institucion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Certificado" Type="Boolean" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_Idiomas_fk" FromRole="Idiomas" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Licencias">
+    <Key>
+      <PropertyRef Name="Id_Licencias" />
+    </Key>
+    <Property Name="Id_Licencias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_Licencias_fk" FromRole="Licencias" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Provincias">
+    <Key>
+      <PropertyRef Name="Cod_Provincia" />
+    </Key>
+    <Property Name="Cod_Provincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreProvincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cantones" Relationship="Self.Provincias_Cantones_fk" FromRole="Provincias" ToRole="Cantones" />
+  </EntityType>
+  <EntityType Name="Puestos">
+    <Key>
+      <PropertyRef Name="Cod_Puesto" />
+    </Key>
+    <Property Name="Cod_Puesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombrePuesto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReqLicencia" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ReqEscolaridad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ReqTitulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="Cod_AreaProfesional" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AreasProfesionales" Relationship="Self.AreasProfesionales_Puestos_fk" FromRole="Puestos" ToRole="AreasProfesionales" />
+    <NavigationProperty Name="Puestos_Usuario" Relationship="Self.Puestos_Puestos_Usuario_fk" FromRole="Puestos" ToRole="Puestos_Usuario" />
+  </EntityType>
+  <EntityType Name="Puestos_Usuario">
+    <Key>
+      <PropertyRef Name="Id_Puestos_Usuario" />
+    </Key>
+    <Property Name="Id_Puestos_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="Cod_Puesto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Puestos" Relationship="Self.Puestos_Puestos_Usuario_fk" FromRole="Puestos_Usuario" ToRole="Puestos" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_AreasProfesionales_Usuario_fk" FromRole="Puestos_Usuario" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Titulos">
+    <Key>
+      <PropertyRef Name="Id_Titulo" />
+    </Key>
+    <Property Name="Id_Titulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreTitulo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Grado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Emision" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Emisor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_Titulos_fk" FromRole="Titulos" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Cod_Usuario" />
+    </Key>
+    <Property Name="Cod_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Correo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Identificacion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TelefonoMovil" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TelefonoFijo" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaIngresoSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UltimaVisita" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Discapacidad" Type="Boolean" Nullable="false" />
+    <Property Name="Cod_Distrito" Type="Int32" Nullable="false" />
+    <Property Name="Cod_Escolaridad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Certificados" Relationship="Self.Usuarios_Certificados__fk" FromRole="Usuarios" ToRole="Certificados" />
+    <NavigationProperty Name="Curriculums" Relationship="Self.Usuarios_Curriculums_fk" FromRole="Usuarios" ToRole="Curriculums" />
+    <NavigationProperty Name="Distritos" Relationship="Self.Distritos_Usuarios_fk" FromRole="Usuarios" ToRole="Distritos" />
+    <NavigationProperty Name="Escolaridades" Relationship="Self.Escolaridades_Usuarios_fk" FromRole="Usuarios" ToRole="Escolaridades" />
+    <NavigationProperty Name="Idiomas" Relationship="Self.Usuarios_Idiomas_fk" FromRole="Usuarios" ToRole="Idiomas" />
+    <NavigationProperty Name="Licencias" Relationship="Self.Usuarios_Licencias_fk" FromRole="Usuarios" ToRole="Licencias" />
+    <NavigationProperty Name="Puestos_Usuario" Relationship="Self.Usuarios_AreasProfesionales_Usuario_fk" FromRole="Usuarios" ToRole="Puestos_Usuario" />
+    <NavigationProperty Name="Titulos" Relationship="Self.Usuarios_Titulos_fk" FromRole="Usuarios" ToRole="Titulos" />
+  </EntityType>
+  <Association Name="AreasProfesionales_Puestos_fk">
+    <End Role="AreasProfesionales" Type="Self.AreasProfesionales" Multiplicity="1" />
+    <End Role="Puestos" Type="Self.Puestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreasProfesionales">
+        <PropertyRef Name="Cod_AreaProfesional" />
+      </Principal>
+      <Dependent Role="Puestos">
+        <PropertyRef Name="Cod_AreaProfesional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cantones_Distritos_fk">
+    <End Role="Cantones" Type="Self.Cantones" Multiplicity="1" />
+    <End Role="Distritos" Type="Self.Distritos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cantones">
+        <PropertyRef Name="Cod_Cantones" />
+      </Principal>
+      <Dependent Role="Distritos">
+        <PropertyRef Name="Cod_Cantones" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Provincias_Cantones_fk">
+    <End Role="Provincias" Type="Self.Provincias" Multiplicity="1" />
+    <End Role="Cantones" Type="Self.Cantones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincias">
+        <PropertyRef Name="Cod_Provincia" />
+      </Principal>
+      <Dependent Role="Cantones">
+        <PropertyRef Name="Cod_Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Certificados__fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Certificados" Type="Self.Certificados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Certificados">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Curriculums_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Curriculums" Type="Self.Curriculums" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Curriculums">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Distritos_Usuarios_fk">
+    <End Role="Distritos" Type="Self.Distritos" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distritos">
+        <PropertyRef Name="Cod_Distrito" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Cod_Distrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Escolaridades_Usuarios_fk">
+    <End Role="Escolaridades" Type="Self.Escolaridades" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Escolaridades">
+        <PropertyRef Name="Cod_Escolaridad" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Cod_Escolaridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Idiomas_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Idiomas" Type="Self.Idiomas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Idiomas">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Licencias_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Licencias" Type="Self.Licencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Licencias">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Puestos_Puestos_Usuario_fk">
+    <End Role="Puestos" Type="Self.Puestos" Multiplicity="1" />
+    <End Role="Puestos_Usuario" Type="Self.Puestos_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puestos">
+        <PropertyRef Name="Cod_Puesto" />
+      </Principal>
+      <Dependent Role="Puestos_Usuario">
+        <PropertyRef Name="Cod_Puesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_AreasProfesionales_Usuario_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Puestos_Usuario" Type="Self.Puestos_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Puestos_Usuario">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Usuarios_Titulos_fk">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Titulos" Type="Self.Titulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Cod_Usuario" />
+      </Principal>
+      <Dependent Role="Titulos">
+        <PropertyRef Name="Cod_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Atraccion_Talento_HumanoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AreasProfesionales" EntityType="Self.AreasProfesionales" />
+    <EntitySet Name="Cantones" EntityType="Self.Cantones" />
+    <EntitySet Name="Certificados" EntityType="Self.Certificados" />
+    <EntitySet Name="Curriculums" EntityType="Self.Curriculums" />
+    <EntitySet Name="Distritos" EntityType="Self.Distritos" />
+    <EntitySet Name="Escolaridades" EntityType="Self.Escolaridades" />
+    <EntitySet Name="Idiomas" EntityType="Self.Idiomas" />
+    <EntitySet Name="Licencias" EntityType="Self.Licencias" />
+    <EntitySet Name="Provincias" EntityType="Self.Provincias" />
+    <EntitySet Name="Puestos" EntityType="Self.Puestos" />
+    <EntitySet Name="Puestos_Usuario" EntityType="Self.Puestos_Usuario" />
+    <EntitySet Name="Titulos" EntityType="Self.Titulos" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="AreasProfesionales_Puestos_fk" Association="Self.AreasProfesionales_Puestos_fk">
+      <End Role="AreasProfesionales" EntitySet="AreasProfesionales" />
+      <End Role="Puestos" EntitySet="Puestos" />
+    </AssociationSet>
+    <AssociationSet Name="Cantones_Distritos_fk" Association="Self.Cantones_Distritos_fk">
+      <End Role="Cantones" EntitySet="Cantones" />
+      <End Role="Distritos" EntitySet="Distritos" />
+    </AssociationSet>
+    <AssociationSet Name="Provincias_Cantones_fk" Association="Self.Provincias_Cantones_fk">
+      <End Role="Provincias" EntitySet="Provincias" />
+      <End Role="Cantones" EntitySet="Cantones" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Certificados__fk" Association="Self.Usuarios_Certificados__fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Certificados" EntitySet="Certificados" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Curriculums_fk" Association="Self.Usuarios_Curriculums_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Curriculums" EntitySet="Curriculums" />
+    </AssociationSet>
+    <AssociationSet Name="Distritos_Usuarios_fk" Association="Self.Distritos_Usuarios_fk">
+      <End Role="Distritos" EntitySet="Distritos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="Escolaridades_Usuarios_fk" Association="Self.Escolaridades_Usuarios_fk">
+      <End Role="Escolaridades" EntitySet="Escolaridades" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Idiomas_fk" Association="Self.Usuarios_Idiomas_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Idiomas" EntitySet="Idiomas" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Licencias_fk" Association="Self.Usuarios_Licencias_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Licencias" EntitySet="Licencias" />
+    </AssociationSet>
+    <AssociationSet Name="Puestos_Puestos_Usuario_fk" Association="Self.Puestos_Puestos_Usuario_fk">
+      <End Role="Puestos" EntitySet="Puestos" />
+      <End Role="Puestos_Usuario" EntitySet="Puestos_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_AreasProfesionales_Usuario_fk" Association="Self.Usuarios_AreasProfesionales_Usuario_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Puestos_Usuario" EntitySet="Puestos_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="Usuarios_Titulos_fk" Association="Self.Usuarios_Titulos_fk">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Titulos" EntitySet="Titulos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
