@@ -51,6 +51,8 @@ C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTal
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\roslyn\VBCSCompiler.exe
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\Antlr3.Runtime.dll
+C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.dll
+C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.SqlServer.dll
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\Newtonsoft.Json.dll
@@ -62,6 +64,8 @@ C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTal
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\System.Web.WebPages.dll
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\System.Web.WebPages.Razor.dll
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\WebGrease.dll
+C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.xml
+C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.SqlServer.xml
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\System.Web.Helpers.xml
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\System.Web.Mvc.xml
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\System.Web.Optimization.xml
@@ -77,7 +81,3 @@ C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTal
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\obj\Debug\AtraccionTalentoHumanoWebApp.csproj.CopyComplete
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\obj\Debug\AtraccionTalentoHumanoWebApp.dll
 C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\obj\Debug\AtraccionTalentoHumanoWebApp.pdb
-C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.dll
-C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.SqlServer.dll
-C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.xml
-C:\Users\johns\Desktop\Proyecto Coarsa\AtraccionTalentoHumanoWebApp\AtraccionTalentoHumanoWebApp\bin\EntityFramework.SqlServer.xml
